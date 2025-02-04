@@ -1762,7 +1762,7 @@ const SYS_OPENAT2: i32 = 437;
 #[cfg(all(linux_kernel, target_pointer_width = "64"))]
 const SYS_OPENAT2: i64 = 437;
 
-#[cfg(target_os = "linux")]
+#[cfg(any(target_os = "linux", target_os = "android"))]
 pub(crate) fn sendfile(
     out_fd: BorrowedFd<'_>,
     in_fd: BorrowedFd<'_>,
